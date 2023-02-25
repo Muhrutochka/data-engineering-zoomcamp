@@ -35,10 +35,10 @@ def write_gcs(path: Path, color: str, year: int, month: int) -> None:
     return
 
 @flow
-def etl_web_to_gcs() -> None:
+def etl_web_to_gcs(color: str, year: int) -> None:
     """Main ETL function"""
-    color = "fhv"
-    year = 2019
+    # color = "green"
+    # year = 2019
     months = list(range(1,13))
     
     for month in months:
@@ -51,4 +51,4 @@ def etl_web_to_gcs() -> None:
         write_gcs(path, color, year, month)
 
 if __name__ == '__main__':
-    etl_web_to_gcs()
+    etl_web_to_gcs("yellow",2020)
